@@ -11,6 +11,16 @@ h1{
     margin-bottom: 40px;
     border-radius: 30px;
     max-width: 1200px; }
+label{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold; }
+input{
+    width: 20%;
+    padding: 6px;
+    margin-top: 4px;  }
+
+    
 
 }
 
