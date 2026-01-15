@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body> 
-    <div class="container">
+    
        <h1>Atención para clientes corporativos</h1>
        <section class="card">
   <h2>Métricas del Cliente</h2>
@@ -46,5 +46,42 @@
      <h2>Resultado Obtenido</h2>
   <pre id="resultado">Esperando análisis...</pre>
 
+  <script>
+    document.getElementById("clienteForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
 
-    </div>
+      const prompt = `
+      Eres un ejecutivo especializado en retención de clientes corporativos. Tu función es detectar riesgo de inconformidad antes de que el cliente lo externe, usando métricas operativas simples y proponiendo acciones preventivas claras y accionables..
+      Analiza métricas, detecta tendencias negativas, clasifica el nivel de riesgo y sugiere acciones preventivas.
+      Datos del cliente:
+        Cliente: ${cliente.value}
+        Nivel de servicio: ${nivelServicio.value}%
+        Puntualidad: ${puntualidad.value}%
+        NPS actual: ${npsActual.value}
+        NPS histórico: ${npsHistorico.value}
+        Quejas abiertas: ${quejas.value}
+        Antigüedad de quejas: ${diasQueja.value} días
+        Comentarios: ${comentarios.value}
+
+    Devuelve el resultado en este formato:
+        Cliente:
+        Nivel de riesgo:
+        Score de riesgo (0–100):
+        Señales detectadas:
+        Interpretación del riesgo:
+        Acciones preventivas sugeridas: `;
+
+        const response = await fetch("https://TU_API_BACKEND/analizar-riesgo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })});
+
+      const data = await response.json();
+      document.getElementById("resultado").textContent = data.resultado;
+    });
+    </script>
+
+</body>
+
+</html>
+
