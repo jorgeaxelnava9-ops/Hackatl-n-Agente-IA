@@ -1,34 +1,35 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prototipo – Agente IA Riesgo Cliente</title>
+  <title>Prototipo – Ejecutivo atención clientes corporativos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Agente IA – Riesgo de Clientes (Prototipo)</h1>
+<h1>Ejecutivo de atención para clientes corporativos</h1>
 
 <section class="card">
-  <h2>Métricas del Cliente (Simuladas)</h2>
+  <h2>Métricas del Cliente</h2>
 
   <label>Nivel de servicio (%)</label>
-  <input type="number" id="servicio" value="92">
+  <input type="number" id="servicio" value="0">
 
   <label>Puntualidad (%)</label>
-  <input type="number" id="puntualidad" value="88">
+  <input type="number" id="puntualidad" value="0">
 
   <label>NPS actual</label>
-  <input type="number" id="npsActual" value="62">
+  <input type="number" id="npsActual" value="0">
 
   <label>NPS histórico</label>
-  <input type="text" id="npsHistorico" value="80, 75, 70">
-
+  <input type="text" id="npsHistorico" value="0, 0, 0">
+<br>
+<br>
   <label>Quejas abiertas</label>
-  <input type="number" id="quejas" value="2">
+  <input type="number" id="quejas" value="0">
 
   <label>Antigüedad de quejas (días)</label>
-  <input type="number" id="dias" value="15">
+  <input type="number" id="dias" value="0">
 
   <button onclick="evaluarRiesgo()">Evaluar Riesgo</button>
 </section>
@@ -56,7 +57,7 @@ function evaluarRiesgo() {
 
   let score = 0;
 
-  // Reglas simples (simulación del agente)
+
   if (servicio < 90) score += 20;
   if (puntualidad < 90) score += 20;
   if (nps < 70) score += 30;
