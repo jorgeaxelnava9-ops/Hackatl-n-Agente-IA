@@ -8,6 +8,8 @@
 <body> 
     <div class="container">
        <h1>Atención para clientes corporativos</h1>
+       <section class="card">
+  <h2>Métricas del Cliente</h2>
 
        <form id="clienteForm"></form>
 
@@ -23,6 +25,26 @@
     <label for="npsActual">NPS actual</label>
     <input type="number" id="npsActual">
 
-    <label for="npsHistorico">NPS histórico 8últimos meses)</label>
+    <label for="npsHistorico">NPS histórico (últimos meses)</label>
+    <input type="text" id="npsHistorico">
+    
+    <label for="quejas">Quejas abiertas</label>
+    <input type="number" id="quejas">
+
+    <label for="diasQueja">Antigüedad de quejas (días)</label>
+    <input type="number" id="diasQueja">
+
+    <label for="comentarios">Comentarios adicionales</label>
+    <textarea id="comentarios" rows="4"></textarea>
+
+    <br>
+    <br>
+
+    <button type="submit">Analizar Riesgo</button>
+  </form>
+
+     <h2>Resultado Obtenido</h2>
+  <pre id="resultado">Esperando análisis...</pre>
+
 
     </div>
